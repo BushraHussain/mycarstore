@@ -12,7 +12,12 @@ export const autopart = {
         {
             name: "category", // name act as ID
             title: "Category here",
-            type: "string"
+            type: "reference",
+            to:[
+                {
+                    type: "category"
+                }
+            ]
         },
 
         {

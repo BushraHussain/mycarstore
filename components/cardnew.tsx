@@ -17,7 +17,6 @@ export default function CardNew(props:any) {
                 <Image src={urlFor(props.image).width(200).url()} alt="My image" width={200} height={200}></Image>
             </div>
             <div>{props.name}</div>
-            <div>{props.category}</div>
             <div>${props.price}</div>
             <button className='bg-green-200 h-12 w-28'>Buy now</button>
         </div>

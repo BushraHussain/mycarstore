@@ -10,7 +10,6 @@ import CardNew from "../../components/cardnew";
 async function getData() {
     const res = await client.fetch(`*[_type == 'autopart' && category=="Interior"]{
       title,
-      category,
       price,
       image
     }`); 
@@ -49,7 +48,6 @@ export default function InteriorView() {
                     {data.map((item:any) => ( 
                         <CardNew 
                             name = {item.title}
-                            category = {item.category}
                             price = {item.price}
                             image = {item.image}
                         />    

@@ -5,15 +5,17 @@ import { client } from "../../sanity/lib/client"
 import imageUrlBuilder from '@sanity/image-url'
 import Image from 'next/image'
 import CardNew from "../../components/cardnew";
+import { log } from "util";
 
 //----------- To fetch data (title, description, image, price)
 async function getData() {
-    const res = await client.fetch(`*[_type == 'autopart' && category=="Exterior"]{
+    const res = await client.fetch(`*[_type == 'autopart' ]{
       title,
-      category,
       price,
       image
     }`); 
+    console.log("res", res);
+    
     return res;
   }
 
@@ -49,7 +51,6 @@ export default function ExteriorView() {
                     {data.map((item:any) => ( 
                         <CardNew 
                             name = {item.title}
-                            category = {item.category}
                             price = {item.price}
                             image = {item.image}
                         />    

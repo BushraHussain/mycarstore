@@ -9,9 +9,11 @@ import CardNew from "../../components/cardnew";
 async function getData() {
     const res = await client.fetch(`*[_type == 'autopart']{
       title,
-      category,
       price,
-      image
+      image,
+      category -> {
+        name
+      }
     }`); 
     return res;
   }
@@ -47,10 +49,11 @@ export default function AllProductsSanityView() {
                 <div className="grid grid-cols-4 gap-16">
                     {data.map((item:any) => ( 
                         <CardNew 
-                            name = {item.title}
-                            category = {item.category}
-                            price = {item.price}
-                            image = {item.image}
+                          name = {item.title}
+                          category = {item.category.name }
+                          price = {item.price}
+                          image = {item.image}
+                          
                         />    
                     ))}    
                 </div>
