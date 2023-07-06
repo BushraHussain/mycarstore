@@ -1,9 +1,9 @@
 
 export default function Products() {
     return(
-        <div>  
+        <div className=" py-28 ">  
             <div className="flex justify-center items-center ">
-                <div className="text-center space-y-4 pt-28">
+                <div className="text-center space-y-4 ">
                     <p className="text-md font-bold">
                         PRODUCTS
                     </p>

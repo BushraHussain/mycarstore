@@ -1,7 +1,7 @@
 export default function Promotion() {
     return(
-        <div className="justify-center items-center">  
-            <div className="text-center space-y-4 pt-28">
+        <div className="bg-gray-50 justify-center items-center py-28">  
+            <div className="text-center space-y-4 ">
                 <p className="text-md font-bold">
                     PROMOTIONS
                 </p>
