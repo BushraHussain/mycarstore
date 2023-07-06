@@ -3,7 +3,7 @@
 export default function AllProducts() {
     return(
         <div>
-            All products
+            All products here
         </div>
     )
 }
