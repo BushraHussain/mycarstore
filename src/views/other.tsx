@@ -47,12 +47,14 @@ export default function OtherView() {
             <div className="flex justify-center">
                 <div className="grid grid-cols-4 gap-16">
                     {data.map((item:any) => ( 
+                      <div key={item.name}>
                         <CardNew 
                             name = {item.title}
                             category = {item.category}
                             price = {item.price}
                             image = {item.image}
-                        />    
+                        /> 
+                      </div>   
                     ))}    
                 </div>
             </div>

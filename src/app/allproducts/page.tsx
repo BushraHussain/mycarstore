@@ -1,9 +1,9 @@
-import AllProductsView from "@/views/allproducts";
+//import AllProductsView from "@/views/allproducts";
 
 export default function AllProducts() {
     return(
         <div>
-            <AllProductsView/> 
+            All products
         </div>
     )
 }
