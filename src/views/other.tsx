@@ -8,7 +8,7 @@ import CardNew from "../../components/cardnew";
 
 //----------- To fetch data (title, description, image, price)
 async function getData() {
-    const res = await client.fetch(`*[_type == 'autopart' && category=="Other"]{
+    const res = await client.fetch(`*[_type == 'autopart' && category->name == 'Other']{
       title,
       category,
       price,
@@ -49,7 +49,7 @@ export default function OtherView() {
                     {data.map((item:any) => ( 
                       <div key={item.name}>
                         <CardNew 
-                            name = {item.title}
+                            title = {item.title}
                             category = {item.category}
                             price = {item.price}
                             image = {item.image}

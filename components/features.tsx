@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function Features() {
     return(
         <div className="py-28">
@@ -11,12 +13,31 @@ export default function Features() {
             {/* Features */}
 
             <div className=" h-[512px] px-16 py-10 grid grid-cols-4 gap-5">
-                <div className="bg-red-200"> Box 1</div>    
-                <div className="bg-green-200"> Box 2</div>
-                <div className="bg-gray-200 col-start-3 row-start-1 row-end-3 "> Box 3</div>
-                <div className="bg-blue-200 col-start-4 row-start-1 row-end-3"> Box 4</div>
-                <div className="bg-purple-200"> Box 5</div>
-                <div className="bg-orange-200"> Box 6</div>
+                <div className="bg-red-200">
+                    <Image className="h-full" src="/box1.jpeg" height={500} width={1200} alt="car"></Image>
+      
+                </div>    
+                <div className="bg-green-200">
+                    <Image className="h-full object-cover" src="/box7.jpeg" height={500} width={1200} alt="car"></Image>
+      
+                
+                </div>
+                <div className="bg-gray-200 col-start-3 row-start-1 row-end-3 "> 
+                    <Image className="h-full object-cover" src="/box4.jpg" height={500} width={1200} alt="car"></Image>
+      
+                </div>
+                <div className="bg-blue-200 col-start-4 row-start-1 row-end-3"> 
+                    <Image className="h-full object-cover" src="/box3.jpeg" height={500} width={1200} alt="car"></Image>
+      
+                </div>
+                <div className="bg-purple-200"> 
+                <Image className="h-full" src="/box2.jpeg" height={500} width={1200} alt="car"></Image>
+      
+                </div>
+                <div className="bg-orange-200">
+                <Image className="h-full object-cover" src="/box5.jpeg" height={500} width={1200} alt="car"></Image>
+      
+                </div>
                 
             </div>
         </div>

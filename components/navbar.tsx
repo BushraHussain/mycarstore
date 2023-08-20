@@ -1,10 +1,15 @@
+"use client"
 import Image from "next/image"
 import SearchBar from "./searchbar"
 import Link from "next/link"
 import { ShoppingCart } from "lucide-react"
 import { AlignRight } from "lucide-react" 
+import { useSelector } from "react-redux/es/hooks/useSelector"
+import { RootState } from "@/app/store"
 
 export default function NavBar() {
+    
+    const counterValue = useSelector((state: RootState) => state.cartReducer.productCount)
     return(
         <div className="pt-10 flex items-center justify-between lg:justify-evenly px-8 lg:px-0">
             <Link href="/"><Image src="/image.webp" width={150} height={150} alt="Logo"></Image></Link>
@@ -23,10 +28,10 @@ export default function NavBar() {
                 <SearchBar/>
             </div>
             
-            <div className="hidden lg:block bg-gray-100 rounded-full w-12 h-12 justify-center items-center ">
-                <div className="w-6 h-6 ml-4 bg-red-500 text-white rounded-full flex justify-center items-center">0</div>
+            <Link href="/cart" className="hidden lg:block bg-gray-100 rounded-full w-12 h-12 justify-center items-center ">
+                <div className="w-6 h-6 ml-4 bg-red-500 text-white rounded-full flex justify-center items-center">{counterValue}</div>
                 <ShoppingCart className="ml-2 -mt-2"/>
-            </div>          
+            </Link>          
         </div>
     )
 }
