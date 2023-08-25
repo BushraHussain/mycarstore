@@ -42,19 +42,19 @@ export default function Footer () {
 
                         <div className="space-y-2">
                             <div className=" text-base">
-                                All NFTs
+                                All Parts
                             </div>
 
                             <div className=" text-base">
-                                Art
+                                Exterior
                             </div>
 
                             <div className=" text-base">
-                                Music
+                                Interior
                             </div>
 
                             <div className="text-base">
-                                Domain
+                                Other
                             </div>
                         </div>
 
@@ -68,19 +68,19 @@ export default function Footer () {
 
                         <div className="space-y-2">
                             <div className=" text-base">
-                                All NFTs
+                                All Parts
                             </div>
 
                             <div className=" text-base">
-                                Art
+                                Exterior
                             </div>
 
                             <div className=" text-base">
-                                Music
+                                Interior
                             </div>
 
                             <div className=" text-base">
-                                Domain
+                                Other
                             </div>
                         </div>
 
@@ -91,19 +91,19 @@ export default function Footer () {
 
                         <div className="space-y-2">
                             <div className="text-base">
-                                All NFTs
+                                All Parts
                             </div>
 
                             <div className="text-base">
-                                Art
+                                Exterior
                             </div>
 
                             <div className="text-base">
-                                Music
+                                Interior
                             </div>
 
                             <div className=" text-base">
-                                Domain
+                                Other
                             </div>
                         </div>
 

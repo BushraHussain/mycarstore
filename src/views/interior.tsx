@@ -11,6 +11,7 @@ async function getData() {
     const res = await client.fetch(`*[_type == 'autopart' && category->name == 'Interior']{
       title,
       price,
+      _id,
       image
     }`); 
     return res;
@@ -48,9 +49,10 @@ export default function InteriorView() {
                     {data.map((item:any) => ( 
                       <div key={item.name}>
                         <CardNew 
-                            name = {item.title}
+                            title = {item.title}
                             price = {item.price}
                             image = {item.image}
+                            id = {item._id}
                         /> 
                       </div>   
                     ))}    

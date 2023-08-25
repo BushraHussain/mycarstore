@@ -15,14 +15,16 @@ function urlFor(source:any) { // Make URL
 
 export default function ProductSingleView(props:any) {
 
-    const[counter, setCounter] = useState(0);
+    const[counter, setCounter] = useState(1);
 
     function handleAdd() {
         setCounter(counter+1);
     }
 
     function handleMinus() {
-        setCounter(counter-1);
+        if(counter > 1){
+            setCounter(counter-1);
+        }
     }
 
     return(
@@ -38,13 +40,17 @@ export default function ProductSingleView(props:any) {
                 <div className="flex space-x-4 items-center">
                     <p>Quantity:</p>
                     <button className="w-10 h-10 rounded-full  border-2 border-black flex justify-center items-center " onClick={handleAdd}> + </button>
-                    <div>{counter}</div>
+                        <div>{counter}</div>
                     <button className="w-10 h-10 rounded-full  border-2 border-black flex justify-center items-center" onClick={handleMinus}>-</button>
                 </div>
                
                 <div className="flex items-center space-x-4">
                    <AddToBag 
                         id = {props.id}
+                        counterValue = {counter}
+                        title = {props.title}
+                        price = {props.price}
+                        image = {props.image}
                    />
                 </div>
 

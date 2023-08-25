@@ -12,6 +12,7 @@ async function getData() {
     const res = await client.fetch(`*[_type == 'autopart' && category->name == 'Exterior' ]{
       title,
       price,
+      _id,
       image
     }`); 
     console.log("res", res);
@@ -52,6 +53,7 @@ export default function ExteriorView() {
                           image = {items.image}
                           title = {items.title}
                           price = {items.price}
+                          id = {items._id}
                         />  
                       </div>  
                     ))}    

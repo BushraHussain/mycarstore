@@ -12,6 +12,7 @@ async function getData() {
       title,
       category,
       price,
+      _id,
       image
     }`); 
     return res;
@@ -53,6 +54,7 @@ export default function OtherView() {
                             category = {item.category}
                             price = {item.price}
                             image = {item.image}
+                            id = {item._id}
                         /> 
                       </div>   
                     ))}    

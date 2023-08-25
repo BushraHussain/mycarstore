@@ -13,11 +13,21 @@ export const cartSlice = createSlice({
     name: "productCount",
     initialState,
     reducers: {
-        addToCart: (state) => {
-            state.productCount += 1;
+        addToCart: (state, action) => {
+            if(action.payload){
+                state.productCount += action.payload;
+            } else {  
+                state.productCount += 1;
+            }
+            
         },
-        removeFromCart: (state) => {
-            state.productCount -= 1;
+        removeFromCart: (state, action) => {
+            if(action.payload){
+                state.productCount -= action.payload;
+            } else {
+                state.productCount -= 1;
+            }
+            
         }
     }
 })

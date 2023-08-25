@@ -28,7 +28,11 @@ export default function CardNew(props:any) {
                 </div>
 
                 <AddToBag 
+                  title = {props.title}
+                  price = {props.price}
+                  quanitity = {1}
                   id = {props.id}
+                  image = {props.image}
                 />
                 
             </div>

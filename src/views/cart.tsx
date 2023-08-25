@@ -1,7 +1,5 @@
 "use client"
 import { useEffect, useState } from 'react';
-import { cookies } from "next/headers";
-import CartCard from '../../components/cartcard';
 import { client } from "../../sanity/lib/client"
 
 let _sanityData:any = [];
@@ -12,7 +10,6 @@ async function fetchData() {
   let sanityData:any;
   let _productID:any = [];
   
-
   try {
     const response = await fetch(`/api/cart?${document.cookie}`);
     data = await response.json();
@@ -20,11 +17,7 @@ async function fetchData() {
     console.log("data all ", data);
     
     data.res.forEach((item:any) => {
-      //const productId = item.product_id; 
-      //_productID = productId;
       _productID.push(item.product_id);
-      //console.log("Product id is ", productId); // or perform any desired operation with the user_id
-      //sanityData = getDataFromSanity(productId); 
     });
   }
 

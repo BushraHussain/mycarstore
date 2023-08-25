@@ -7,12 +7,13 @@ import {eq, sql } from 'drizzle-orm';
 //------- GET
 export const GET = async (request:Request) => {
     //---- Get user_id from user's browser cookies
-    const url = new URL(request.url);
-    const urlParams = new URLSearchParams(url.search); 
-    const user_id = urlParams.get('user_id'); 
+    const userIDD = cookies().get("user_id"); // Get user_id object
+    const user_id = userIDD?.value;
+    console.log("user idd value ", user_id); // Get value
 
+    
     //---- Get product_ID of a specific user ID (taken from cookies)
-    if (user_id !== null) {
+    if (user_id!== null) {
         const res = await db.select({
                 'product_id' : sql<string> `product_id` 
         }).from(cartTable).where(eq(cartTable.user_id, user_id));
